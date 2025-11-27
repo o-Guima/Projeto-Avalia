@@ -1,0 +1,176 @@
+.nova-avaliacao-container {
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  animation: fadeIn 0.5s ease;
+}
+
+.nova-avaliacao-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.nova-avaliacao-header h1 {
+  margin: 0;
+}
+
+.avaliacao-form {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.avaliacao-info-card h3,
+.questoes-selecao-card h3 {
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.questoes-selecao-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.questoes-count {
+  color: var(--color-red); 
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.filtro-materia {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--border-radius-sm);
+}
+
+.filtro-materia label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.filtro-materia i {
+  margin-right: var(--spacing-xs);
+  color: var(--color-red);
+}
+
+.questoes-empty-state {
+  text-align: center;
+  padding: var(--spacing-xxl);
+  color: var(--color-gray-light);
+}
+
+.questoes-empty-state p {
+  margin-bottom: var(--spacing-lg);
+}
+
+.questoes-selecao-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: var(--spacing-sm);
+}
+
+.questao-selecao-item {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid var(--color-dark-border);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.questao-selecao-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: var(--color-red);
+}
+
+.questao-selecao-item.selecionada {
+  background: rgba(217, 4, 41, 0.1);
+  border-color: var(--color-red);
+}
+
+.questao-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-red);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.questao-selecao-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.questao-selecao-badges {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.questao-selecao-enunciado {
+  color: var(--color-white);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.questao-professor-info {
+  color: var(--color-gray-light);
+  font-size: 0.875rem;
+}
+
+.questao-professor-info i {
+  margin-right: var(--spacing-xs);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  padding-top: var(--spacing-lg);
+}
+
+.form-actions button {
+  min-width: 150px;
+}
+
+.form-error {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  border-left: 4px solid #dc3545;
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .nova-avaliacao-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  .questoes-selecao-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}

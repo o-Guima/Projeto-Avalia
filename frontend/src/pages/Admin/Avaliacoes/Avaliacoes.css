@@ -1,0 +1,124 @@
+.avaliacoes-container {
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  animation: fadeIn 0.5s ease;
+}
+
+.avaliacoes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.avaliacoes-header h1 {
+  margin: 0;
+}
+
+.avaliacoes-empty {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-xl);
+}
+
+.avaliacoes-empty i {
+  font-size: 4rem;
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+.avaliacoes-empty p {
+  color: var(--color-gray-light);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.avaliacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.avaliacao-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avaliacao-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.avaliacao-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-dark-border);
+}
+
+.avaliacao-card-header h3 {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 1.25rem;
+  flex: 1;
+}
+
+.avaliacao-questoes-count {
+  background: var(--color-red);
+  color: var(--color-white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.avaliacao-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.avaliacao-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-gray-light);
+  font-size: 0.95rem;
+}
+
+.avaliacao-info i {
+  width: 20px;
+  color: var(--color-red);
+}
+
+.avaliacao-card-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-dark-border);
+}
+
+.avaliacao-card-actions .btn-icon {
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .avaliacoes-container {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .avaliacoes-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+
+  .avaliacoes-grid {
+    grid-template-columns: 1fr;
+  }
+}

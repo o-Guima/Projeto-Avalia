@@ -1,0 +1,165 @@
+.navbar {
+  /* Mudança: Troquei o gradiente vermelho sólido por um fundo escuro elegante */
+  background: var(--color-dark-surface);
+  border-bottom: 1px solid var(--color-dark-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Sombra mais difusa */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* Efeito de vidro se o navegador suportar */
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem; /* Levemente mais compacto */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  /* Gradiente no texto para combinar com os títulos das páginas */
+  background: linear-gradient(90deg, var(--color-red) 0%, var(--color-red) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+/* Ícone dentro do logo (se houver) ou efeito no hover */
+.navbar-logo:hover {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md); /* Espaçamento mais rítmico */
+  margin: 0 auto; /* Tenta centralizar o menu se houver espaço */
+}
+
+/* Links de Navegação */
+.navbar-link {
+  color: var(--color-gray-light); /* Cor padrão mais suave */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius-md); /* Mais arredondado */
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+}
+
+/* Efeito Hover Moderno (Pílula) */
+.navbar-link:hover {
+  background: rgba(80, 80, 80, 0.4); /* Cinza mais escuro */
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+/* Dica: Adicione a classe 'active' no React Router para o link atual */
+.navbar-link.active {
+  background: rgba(220, 53, 69, 0.1); /* Fundo vermelho bem sutil */
+  color: var(--color-red);
+  font-weight: 600;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding-left: var(--spacing-lg);
+  /* Separador vertical mais sutil */
+  border-left: 1px solid var(--color-dark-border); 
+  height: 40px; /* Altura fixa para alinhar o separador */
+}
+
+.navbar-username {
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Adicionando um "avatar" visual via CSS se não tiver imagem */
+
+
+/* Botão de Logout */
+.navbar-logout {
+  background: transparent;
+  color: var(--color-gray-light);
+  border: 1px solid transparent; /* Invisível até o hover */
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Hover de "Perigo" */
+.navbar-logout:hover {
+  background: rgba(220, 53, 69, 0.1);
+  color: var(--color-red);
+  border-color: rgba(220, 53, 69, 0.3);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: 1rem;
+  }
+  
+  /* Menu Mobile mais organizado */
+  .navbar-menu {
+    flex-direction: row; /* Mantém em linha se couber, ou... */
+    flex-wrap: wrap; /* ...quebra linha se tiver muitos itens */
+    justify-content: center;
+    width: 100%;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .navbar-link {
+    width: auto; /* Não estica 100% para parecer botões */
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 255, 255, 0.03); /* Fundo sutil no mobile para diferenciar */
+  }
+  
+  .navbar-user {
+    flex-direction: row; /* Mantém lado a lado no mobile */
+    justify-content: space-between; /* Espalha username e logout */
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--color-dark-border);
+    padding-top: var(--spacing-md);
+    height: auto;
+  }
+  
+  .navbar-username::before {
+    width: 28px; /* Avatar um pouco menor */
+    height: 28px;
+  }
+}

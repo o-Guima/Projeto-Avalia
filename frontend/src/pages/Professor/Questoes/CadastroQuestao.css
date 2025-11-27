@@ -1,0 +1,154 @@
+.cadastro-questao-container {
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  animation: fadeIn 0.5s ease;
+}
+
+.cadastro-questao-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.cadastro-questao-header h1 {
+  margin: 0;
+}
+
+.questao-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-xxl);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-error {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-lg);
+  animation: fadeIn 0.3s ease;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.alternativas-section {
+  background: rgba(255, 255, 255, 0.02);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  border: 1px dashed var(--color-dark-border);
+  margin: var(--spacing-xl) 0;
+}
+
+.alternativas-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.alternativas-header h3 {
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.alternativas-hint {
+  color: var(--color-gray-light);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.alternativa-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--color-dark-surface);
+  border-radius: var(--border-radius-sm);
+}
+
+.alternativa-radio {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-red);
+}
+
+.alternativa-letra {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-dark-bg);
+  border: 2px solid var(--color-dark-border);
+  border-radius: 50%;
+  font-weight: 700;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.alternativa-input {
+  flex-grow: 1;
+}
+
+.btn-add-alternativa {
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-dark-border);
+}
+
+@media (max-width: 768px) {
+  .cadastro-questao-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .questao-form {
+    padding: var(--spacing-lg);
+  }
+  
+  .alternativa-item {
+    flex-wrap: wrap;
+  }
+  
+  .alternativa-input {
+    width: 100%;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}

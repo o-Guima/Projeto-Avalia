@@ -1,0 +1,341 @@
+.materias-container {
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  animation: fadeIn 0.5s ease;
+}
+
+.materias-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.materias-header h1 {
+  margin: 0;
+}
+
+.materias-table-container {
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background-color: #f8f9fa;
+}
+
+.table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.table tbody tr:hover {
+  background-color: #c0c0c0;
+}
+
+.table-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.btn-icon.btn-secondary {
+  background-color: var(--color-gray-light);
+  color: var(--color-dark-bg);
+}
+
+.btn-icon.btn-secondary:hover {
+  background-color: #888;
+}
+
+.badge-info {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge.ativo {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.status-badge.inativo {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--color-dark-surface);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xxl);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.modal-large {
+  max-width: 700px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--color-gray-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--color-white);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.form-group textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.form-group-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-red);
+}
+
+.form-group-checkbox label {
+  color: var(--color-white);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+}
+
+.professores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.professor-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid var(--color-dark-border);
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+  background: var(--color-dark-bg);
+}
+
+.professor-item:hover {
+  border-color: var(--color-red);
+}
+
+.professor-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.professor-info i {
+  font-size: 2rem;
+  color: var(--color-red);
+}
+
+.professor-info div {
+  display: flex;
+  flex-direction: column;
+}
+
+.professor-info strong {
+  color: var(--color-white);
+  font-size: 1.1rem;
+}
+
+.professor-login {
+  color: var(--color-gray-light);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .materias-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: var(--spacing-lg);
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .professor-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Alertas Personalizados */
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-weight: 500;
+  z-index: 10000;
+  transform: translateX(500px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  max-width: 450px;
+  line-height: 1.5;
+}
+
+.custom-alert.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.custom-alert i {
+  font-size: 1.25rem;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 4px solid #28a745;
+}
+
+.alert-success i {
+  color: #28a745;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+.alert-error i {
+  color: #dc3545;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border-left: 4px solid #17a2b8;
+}
+
+.alert-info i {
+  color: #17a2b8;
+}
+
+/* Contador de caracteres */
+.char-counter {
+  float: right;
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: normal;
+}
+
+.char-warning {
+  display: block;
+  margin-top: 0.5rem;
+  color: #856404;
+  font-size: 0.875rem;
+}
+
+.char-warning i {
+  margin-right: 0.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
